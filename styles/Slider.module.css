@@ -1,0 +1,54 @@
+.container{
+    height: calc(100vh - 100px);
+    overflow: hidden;
+}
+.arrowleft{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    z-index: 20;
+    margin: auto;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.arrowright{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 10px;
+    z-index: 20;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.wrapper{
+    width: 300vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: all 1.5s ease-in-out;
+}
+.imgcontainer{
+    width: 100vw;
+    height: 100%;
+    position: relative;
+}
+.image{
+    filter: blur(1px);
+}
+.imgtext{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 80%;
+    text-align: center;
+    font-size: 70px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.more{
+    color: #019f52;
+}

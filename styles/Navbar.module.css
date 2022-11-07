@@ -1,0 +1,110 @@
+.container{
+    height: 100px;
+    padding: 0px 20px;
+    background-color: #019f52;
+    /* background-color: #d1411e; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid white;
+    z-index: 50;
+
+}
+.logo{
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+}
+.telephone{
+    color: white;
+    font-size: 30px;
+}
+.textcon{
+    margin-left: 20px;
+    color: white;
+}
+.order{
+    font-size: 12px;
+    font-weight: 500;
+}
+.number{
+    font-size: 20px;
+    font-weight: 500;
+}
+.barLeft{
+    padding: 10px;
+}
+.bar{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.bar:nth-child(2){
+    flex: 3;
+}
+.bar:nth-child(3){
+    display: flex;
+    justify-content: flex-end;
+}
+.list{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    list-style-type: none;
+}
+.listitem{
+    font-weight: 500;
+}
+.cart{
+    position: relative;
+}
+.cartlogo{
+    font-size: 50px;
+    color: white;
+}
+.cartnum{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (max-width:640px) {
+    .bar:nth-child(2) {
+      display: none;
+    }
+  
+    .bar:nth-child(1) {
+      flex: 3;
+    }
+  }
+/* sm */
+@media screen and (max-width:768px) {
+    .bar:nth-child(2) {
+      display: none;
+    }
+  
+    .bar:nth-child(1) {
+      flex: 3;
+    }
+  }
+/* md */
+@media screen and (max-width:1024px) {
+    .textcon{
+    margin-left: 5px;
+    }
+  
+    
+  }
