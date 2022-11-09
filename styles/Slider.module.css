@@ -38,6 +38,7 @@
 }
 .image{
     filter: blur(1px);
+    filter: brightness(70%);
 }
 .imgtext{
     position: absolute;

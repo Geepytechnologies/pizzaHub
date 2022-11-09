@@ -1,8 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import styles from "../styles/Cart.module.css"
+import { useDispatch, useSelector } from 'react-redux'
+import { TbCurrencyNaira } from 'react-icons/tb'
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart)
+  const dispatch = useDispatch()
+
   return (
     <div className={styles.container}>
        <div className={styles.left}>
@@ -15,35 +20,42 @@ const Cart = () => {
             <th>Quantity</th>
             <th>Total</th>
           </tr>
-          <tr className={styles.tr}>
+          {cart.pizzas.map((pizza, index) => (
+          <tr key={index} className={styles.tr}>
             <td>
               <div className={styles.imgContainer}>
                 <Image
-                  src="/images/pizzabg2.jpg"
+                  src={pizza.img}
                   fill={true}
                   style={{objectFit: 'cover', borderRadius:'50%'}}
+                  sizes="200px"
                   alt=""
                 />
               </div>
             </td>
             <td>
-              <span className={styles.name}>CORALZO</span>
+              <span className={styles.name}>{pizza.title}</span>
             </td>
             <td>
               <span className={styles.extras}>
-                Double ingredient, spicy sauce
+                {
+                  pizza.sauce.map((sauce, index) => (
+                    <span key={index} className={styles.sauce}> {sauce.text}, </span>
+                  ))
+                }
               </span>
             </td>
             <td>
-              <span className={styles.price}>$19.90</span>
+              <span className={styles.price}>{pizza.price}</span>
             </td>
             <td>
-              <span className={styles.quantity}>2</span>
+              <span className={styles.quantity}>{pizza.quantity}</span>
             </td>
             <td>
-              <span className={styles.total}>$39.80</span>
+              <span className={styles.total}><TbCurrencyNaira style={{fontSize: 30}} />{pizza.price * pizza.quantity}</span>
             </td>
           </tr>
+          ))}
           
         </table>
 
@@ -52,13 +64,22 @@ const Cart = () => {
         <div className={styles.wrapper}>
           <h2 className={styles.title}>CART TOTAL</h2>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Subtotal:</b>$79.60
+            <b className={styles.totalTextTitle}>Subtotal:
+              <div className={styles.naira}><TbCurrencyNaira style={{fontSize: 20}} /> {cart.total}
+              </div>
+            </b>
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Discount:</b>$0.00
+            <b className={styles.totalTextTitle}>Discount:
+              <div className={styles.naira}><TbCurrencyNaira style={{fontSize: 20}} /> 0.00
+              </div>
+            </b>
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>$79.60
+            <b className={styles.totalTextTitle}>Total:
+              <div className={styles.naira}><TbCurrencyNaira style={{fontSize: 20}} /> {cart.total}
+              </div>
+            </b>
           </div>
           <button className={styles.button}>CHECKOUT NOW!</button>
         </div>

@@ -1,8 +1,7 @@
 .container{
     height: 100px;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     background-color: #019f52;
-    /* background-color: #d1411e; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -17,6 +16,7 @@
     font-size: 40px;
     font-family: 'Dancing Script', cursive;
     font-weight: 600;
+    cursor: pointer;
 }
 .telephone{
     color: white;
@@ -59,6 +59,18 @@
     color: white;
     list-style-type: none;
 }
+.list2{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 20px;
+    justify-content: space-around;
+    color: white;
+    list-style-type: none;
+}
 .listitem{
     font-weight: 500;
 }
@@ -81,6 +93,32 @@
     align-items: center;
     justify-content: center;
 }
+.menu{
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10px;
+}
+.menulogo{
+    font-size: 40px;
+    color: white;
+    font-weight: 600;
+}
+.closelogo{
+    font-size: 40px;
+    color: white;
+    font-weight: 600;
+    display: none;
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+}
+.sidenav{
+    background-color: #019f52;
+    height: 200px;
+    max-height: 0px;
+    transition: max-height 0.4s ease-in-out;
+}
 @media screen and (max-width:640px) {
     .bar:nth-child(2) {
       display: none;
@@ -98,6 +136,11 @@
   
     .bar:nth-child(1) {
       flex: 3;
+    }
+  }
+@media screen and (min-width:768px) {
+    .menu{
+        display: none;
     }
   }
 /* md */

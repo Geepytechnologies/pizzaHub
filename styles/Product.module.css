@@ -25,6 +25,7 @@
 }
 .icon{
     margin-right: 5px;
+    color: #b7903c;
 }
 .sizes{
     width: 50%;
@@ -39,11 +40,14 @@
     cursor: pointer;
     margin-right: 5px;
 }
-.size:nth-child(2){
+.size{
     font-size: 25px;
 }
-.size:last-child{
+.size:nth-child(2){
     font-size: 30px;
+}
+.size:last-child{
+    font-size: 40px;
 }
 .number{
     font-size: 16px;
@@ -52,6 +56,9 @@
     color: #019f52;
     font-size: 24px;
     font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .option{
     display: flex;
@@ -71,6 +78,7 @@
 .quantity{
     width: 70px;
     padding: 10px;
+    margin-top: 20px;
 }
 .button{
     margin-left: 10px;
@@ -84,9 +92,13 @@
 }
 .add{
     margin-top: 30px;
+    padding: 10px;
 }
 .desc{
     text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    color: #019f52;
 }
 
 @media screen and (min-width:640px) {

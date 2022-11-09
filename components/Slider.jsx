@@ -26,7 +26,7 @@ const Slider = () => {
            {
                images.map((img, index)=>(
                 <div key={index} className={styles.imgcontainer}>
-                <Image src={img} className={styles.image} alt="" fill={true} style={{objectFit: 'cover'}} placeholder='blur' blurDataURL={img} />
+                <Image src={img} className={styles.image} alt="PizzaImage" fill={true} style={{objectFit: 'cover'}} placeholder='blur' blurDataURL={img} />
                 {index == 0 ? <h2 className={styles.imgtext}><span className={styles.more}>MORE </span>THAN JUST A PIZZA</h2> : index == 1 ? <h2 className={styles.imgtext}><span className={styles.more}>LUNCH </span>SPECIALS</h2> : index == 2 ? <h2 className={styles.imgtext}><span className={styles.more}>PIZZA </span>DONE RIGHT</h2> : null}
          </div>
             ))
