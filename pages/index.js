@@ -7,23 +7,30 @@ import AddButton from "../components/AddButton";
 import styles from '../styles/Home.module.css'
 import { useState } from 'react';
 
-export default function Home({pizzas}) {
+export default function Home({pizzas,admin}) {
   const [close, setClose] = useState(true);
   return (
     <div className={styles.container}>
       <Slider />
-      {<AddButton setClose={setClose} />}
+      {admin && <AddButton setClose={setClose} />}
       <Pizzalist pizzas={pizzas} />
       {!close && <Add setClose={setClose} />}
     </div>
   )
 }
 
-export const getServerSideProps = async () =>{
+export const getServerSideProps = async (ctx) =>{
+  const myCookie = ctx.req?.cookies || "";
+  let admin = false;
+
+  if (myCookie.token === process.env.TOKEN) {
+    admin = true;
+  }
   const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/products`);
   return{
     props: {
-      pizzas: res.data
+      pizzas: res.data,
+      admin
     }
   }
 }

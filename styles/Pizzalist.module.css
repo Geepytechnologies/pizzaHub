@@ -6,15 +6,18 @@
     justify-content: center;
     background-color: rgb(243, 242, 242);
 }
-
+.title{
+    font-family: Montserrat;
+}
 .desc{
     font-size: 24px;
     color: #444;
     width: 70%;
     text-align: center;
+
 }
 .wrapper{
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-around;

@@ -32,7 +32,7 @@ const Navbar = () => {
           </div>
           <div className={styles.textcon}>
             <div className={styles.order}>Order Now</div>
-            <div className={styles.number}>01 762 4368</div>
+            <div className={styles.number}>+234 702 436 8614</div>
           </div>
         </div>
         <div className={styles.bar}>
