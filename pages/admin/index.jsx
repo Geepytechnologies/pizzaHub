@@ -133,7 +133,7 @@ const Index = ({ orders, products }) => {
     </div>
     {modal && <div onClick={()=>setModal(false)} className="order-con">
     {orderList.filter((order) => order._id === modalid).map((order, index)=>(
-    <div className="order-modal">
+    <div key={index} className="order-modal">
       <div className="order-items">
         <div>
            <h2 className={styles.logo}><GiFullPizza style={{fill: "#b7903c"}} />Pizza Hub</h2>
