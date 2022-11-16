@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import React from 'react'
 import styles from "../../styles/Order.module.css"
+import { TbCurrencyNaira } from 'react-icons/tb'
+import axios from 'axios';
 
-const Order = () => {
-    const status = 0;
+const Order = ({order}) => {
+    const status = order.status;
 
   const statusClass = (index) => {
     if (index - status < 1) return styles.done;
@@ -26,16 +28,16 @@ const Order = () => {
             <tbody>
             <tr className={styles.tr}>
               <td>
-                <span className={styles.id}>129837819237</span>
+                <span className={styles.id}>{order._id}</span>
               </td>
               <td>
-                <span className={styles.name}>John Doe</span>
+                <span className={styles.name}>{order.customer}</span>
               </td>
               <td>
-                <span className={styles.address}>Elton st. 212-33 LA</span>
+                <span className={styles.address}>{order.address}</span>
               </td>
               <td>
-                <span className={styles.total}>$79.80</span>
+                <span className={styles.total}><TbCurrencyNaira style={{fontSize: 20}} />{order.total}</span>
               </td>
             </tr>
             </tbody>
@@ -100,19 +102,28 @@ const Order = () => {
       <div className={styles.wrapper}>
           <h2 className={styles.title}>CART TOTAL</h2>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Subtotal:</b>$79.60
+            <b className={styles.totalTextTitle}>Subtotal:</b><TbCurrencyNaira />{order.total}
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Discount:</b>$0.00
+            <b className={styles.totalTextTitle}>Discount:</b><TbCurrencyNaira />0.00
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>$79.60
+            <b className={styles.totalTextTitle}>Total:</b><TbCurrencyNaira />{order.total}
           </div>
-          <button className={styles.button}>CHECKOUT NOW!</button>
+          <button className={styles.button}>Order Completed</button>
         </div>
        </div>  
     </div>
   )
+}
+
+export const getServerSideProps = async ({params}) =>{
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/orders/${params.id}`);
+  return{
+    props: {
+      order: res.data
+    }
+  }
 }
 
 export default Order

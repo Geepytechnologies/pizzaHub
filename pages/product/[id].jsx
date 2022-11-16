@@ -6,8 +6,10 @@ import axios from "axios"
 import { TbCurrencyNaira } from 'react-icons/tb'
 import { useDispatch} from "react-redux"
 import { addPizza } from '../../redux/cartSlice'
+import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai'
 
 const Product = ({pizza}) => {
+    const [toast, setToast] = useState(false);
     const [size, setSize] = useState(0);
     const [price, setPrice] = useState(pizza.prices[0]);
     const [extrasauce, setExtrasauce] = useState([]);
@@ -36,8 +38,10 @@ const Product = ({pizza}) => {
     }
     const handlecart = ()=>{
        dispatch(addPizza({...pizza, extrasauce, quantity, price}));
+       setToast(true);
     }
   return (
+    <>
     <div className={styles.container}>
         <div className={styles.left}>
             <div className={styles.imgcontainer}>
@@ -82,11 +86,18 @@ const Product = ({pizza}) => {
                 </div>
         </div>
     </div>
+        {/* toast */}
+        {toast && <div className='wrapper fade-in'><div className='toast'>
+          <AiFillCheckCircle className='toast-icon' style={{marginLeft: "10px"}} />
+          <div className='toasttext'>Your Item has been added to the cart</div>
+          <AiFillCloseCircle onClick={()=>setToast(false)} className='toast-icon' style={{cursor: "pointer"}} />
+        </div></div>}
+    </>
   )
 }
 
 export const getServerSideProps = async ({params}) =>{
-    const res = await axios.get(`${process.env.URL}/api/products/${params.id}`);
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/products/${params.id}`);
     return{
       props: {
         pizza: res.data

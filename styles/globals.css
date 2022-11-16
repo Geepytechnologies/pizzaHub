@@ -14,13 +14,131 @@ a {
 * {
   box-sizing: border-box;
 }
+.wrapper{
+  margin: 30px 0px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toast{
+  background-color: #38a169;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 35px 0px;
+}
+.toasttext{
+  color: white;
+  font-weight: 500;
+  font-family: Montserrat;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.toast-icon{
+  font-size: 30px;
+  color: white;
+  margin-right: 10px;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+  flex-direction: column;
+  background-color: aliceblue;
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+}
+
+.title{
+  font-size: 30px;
+  font-weight: 500;
+  font-family: Montserrat;
+}
+.button{
+  color: white;
+  background-color: #c08f26;
+  padding: 15px 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+}
+.con{
+  position: relative;
+}
+.total-h, .method-h, .status-h, .total, .method, .status{
+  display: none;
+}
+.order-con{
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-modal{
+  background-color: rgb(231, 229, 229);
+  height: auto;
+  width: 80%;
+  display: flex;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.detailstitle{
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Montserrat;
+}
+.totalprice{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-items{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.order-items > p{
+  font-size: 20px;
+}
+.tableid{
+  display: none;
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+  .total-h, .method-h, .status-h, .total, .method, .status{
+    display: table-cell;
   }
-  body {
-    color: white;
-    background: black;
+  .tableid{
+    display: table-cell;
   }
 }
+

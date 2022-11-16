@@ -5,23 +5,36 @@
     align-items: center;
     justify-content: center;
     padding: 20px 40px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    background-color: #33a06b;
+    border: 1px solid white;
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 10px #000);
+}
+.pizzaimage{
+  border-radius: 50%;
+  border: 2px solid white;
+  filter: drop-shadow(5px 5px 10px #555);
+
 }
 .title{
     font-size: 30px;
     font-weight: bold;
-    color: #019f52;
+    color: #dfb14f;
 }
 .price{
     font-size: 28px;
     font-weight: bold;
-    color: #666;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .desc{
     text-align: center;
-    color: #666;
+    color: white;
     font-size: 24px;
 }
 

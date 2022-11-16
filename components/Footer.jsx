@@ -2,8 +2,10 @@ import Image from 'next/image';
 import React from 'react'
 import { GiFullPizza } from 'react-icons/gi';
 import styles from "../styles/Footer.module.css";
+import { useRouter } from 'next/router';
 
 const Footer = () => {
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -11,7 +13,7 @@ const Footer = () => {
       </div>
       <div className={styles.item}>
         <div className={styles.itemcard}>
-          <h2 className={styles.logo}><GiFullPizza style={{fill: "#b7903c"}} />Pizza Hub</h2>
+          <h2 onClick={()=>router.push('/')} className={styles.logo}><GiFullPizza style={{fill: "#b7903c"}} />Pizza Hub</h2>
           <h2 className={styles.motto}>
           It&apos;s not just pizza, it&apos;s an experience
           </h2>

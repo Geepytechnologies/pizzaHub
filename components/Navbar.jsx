@@ -2,11 +2,12 @@ import React, { useRef } from 'react'
 import styles from '../styles/Navbar.module.css'
 import {BsTelephone} from "react-icons/bs"
 import {AiOutlineCloseCircle, AiOutlineMenu, AiOutlineShoppingCart} from "react-icons/ai"
-import { Router } from 'next/router'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useSelector } from "react-redux"
 
 const Navbar = () => {
+  const router = useRouter()
   const open = useRef();
   const close = useRef();
   const menu = useRef();
@@ -36,9 +37,9 @@ const Navbar = () => {
         </div>
         <div className={styles.bar}>
           <ul className={styles.list}>
-              <li className={styles.listitem}>Home</li>
+              <li onClick={()=>router.push('/')} className={styles.listitem}>Home</li>
               <li className={styles.listitem}>Menu</li>
-              <p onClick={()=>Router.push('/')} className={styles.logo}>Pizza Hub</p>
+              <p onClick={()=>router.push('/')} className={styles.logo}>Pizza Hub</p>
               <li className={styles.listitem}>Contact</li>
               <li className={styles.listitem}>Blog</li>
           </ul>
@@ -61,7 +62,7 @@ const Navbar = () => {
           </div>
       </div>
       <div ref={menu} className={styles.sidenav}>
-      <ul className={styles.list2}>
+          <ul className={styles.list2}>
               <Link href={'/'}><li className={styles.listitem}>Home</li></Link>
               <li className={styles.listitem}>Menu</li>
               <li className={styles.listitem}>Contact</li>
