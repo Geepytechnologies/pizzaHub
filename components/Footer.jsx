@@ -3,11 +3,13 @@ import React from 'react'
 import { GiFullPizza } from 'react-icons/gi';
 import styles from "../styles/Footer.module.css";
 import { useRouter } from 'next/router';
+import { AiFillHeart } from 'react-icons/ai';
 
 const Footer = () => {
   const router = useRouter();
   return (
     <div className={styles.container}>
+    <div className={styles.wrapper}>
       <div className={styles.item}>
         <Image src="/images/bgpizza.jpg" alt="dinner table" style={{objectFit: 'cover'}} fill={true} />
       </div>
@@ -33,6 +35,10 @@ const Footer = () => {
           <p className={styles.text}>MONDAY UNTIL FRIDAY <br /> 8:00 - 20:00</p>
           <p className={styles.text}>SATURDAY - SUNDAY <br /> 8:00 - 20:00</p>
         </div>
+      </div>
+    </div>
+      <div className={styles.watermark}>
+        <p className={styles.watertext}>Made with <AiFillHeart className={styles.waterlogo}/> By Geepy</p>
       </div>
     </div>
   )

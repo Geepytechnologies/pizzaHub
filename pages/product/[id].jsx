@@ -45,7 +45,7 @@ const Product = ({pizza}) => {
     <div className={styles.container}>
         <div className={styles.left}>
             <div className={styles.imgcontainer}>
-                <Image src={pizza.img} alt="" fill={true} style={{objectFit:'contain'}} sizes="200"  />
+                <Image src={pizza.img} alt="" fill={true} style={{objectFit:'cover'}}  className={styles.image}  />
             </div>
         </div>
         <div className={styles.right}>
