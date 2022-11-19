@@ -1,5 +1,5 @@
 .container{
-    height: calc(100vh - 100px);
+    height: calc(100vh - 50vh);
     overflow: hidden;
     position: relative;
 }
@@ -51,4 +51,10 @@
 }
 .more{
     color: #019f52;
+}
+
+@media screen and (min-width:768px) {
+    .container{
+        height: calc(100vh - 30vh);
+    }
 }
