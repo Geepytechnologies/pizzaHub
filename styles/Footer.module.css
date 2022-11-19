@@ -16,10 +16,6 @@
     font-weight: 600;
     cursor: pointer;
     color: #019f52;
-    background-color: rgb(241, 239, 239);
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,6 +27,10 @@
     justify-content: space-between;
 }
 .itemcard{
+    flex: 1;
+    padding: 0 20px;
+}
+.itemcardlogo{
     flex: 1;
     padding: 0 20px;
 }

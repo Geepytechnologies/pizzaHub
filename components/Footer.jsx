@@ -14,8 +14,8 @@ const Footer = () => {
         <Image src="/images/bgpizza.jpg" alt="dinner table" style={{objectFit: 'cover'}} fill={true} />
       </div>
       <div className={styles.item}>
-        <div className={styles.itemcard}>
-          <h2 onClick={()=>router.push('/')} className={styles.logo}><GiFullPizza style={{fill: "#b7903c"}} />Pizza Hub</h2>
+        <div className={styles.itemcardlogo}>
+          <h2 onClick={()=>router.push('/')} className={styles.logo}><GiFullPizza style={{fill: "#b7903c"}} /></h2>
           <h2 className={styles.motto}>
           It&apos;s not just pizza, it&apos;s an experience
           </h2>
@@ -30,10 +30,10 @@ const Footer = () => {
         </div>
         <div className={styles.itemcard}>
           <h1 className={styles.title}>
-          WORKING HOURS
+          Working Hours
           </h1>
-          <p className={styles.text}>MONDAY UNTIL FRIDAY <br /> 8:00 - 20:00</p>
-          <p className={styles.text}>SATURDAY - SUNDAY <br /> 8:00 - 20:00</p>
+          <p className={styles.text}>Monday Until Friday <br /> 8:00 - 20:00</p>
+          <p className={styles.text}>Saturday - Sunday <br /> 8:00 - 20:00</p>
         </div>
       </div>
     </div>
